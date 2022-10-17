@@ -42,6 +42,12 @@ const config = {
       },
     ],
   },
+  mode: 'development',
+  devServer: {
+    static: {
+      directory: './dist',
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       templateContent: ({ htmlWebpackPlugin }) =>
