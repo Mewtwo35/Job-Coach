@@ -1,15 +1,10 @@
 import * as React from 'react';
 
-interface Props {
-  name: string;
-}
-
-class App extends React.Component<Props> {
+class App extends React.Component {
   render() {
-    const { name } = this.props;
     return (
       <>
-        <h1>Hello {name}</h1>
+        <h1>Hello Mewtwo</h1>
       </>
     );
   }
