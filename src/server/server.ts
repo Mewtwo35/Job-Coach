@@ -19,7 +19,7 @@ app.use(express.static('./client'));
 const appRouter = require('./routers/routes');
 
 //route all requests to appRouter
-app.get('/', appRouter);
+app.use('/', appRouter);
 
 //404 error handler for unknown routes
 app.use((req: Request, res: Response) => {
