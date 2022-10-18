@@ -2,3 +2,11 @@ h1 {
   color: white;
   background-color: black;
 }
+
+.CategoryContainer {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 1rem;
+  border-style: solid;
+}
