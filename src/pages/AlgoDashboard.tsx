@@ -1,8 +1,5 @@
 import * as React from 'react';
-import CategoriesComponent from './CategoriesComponent';
-
-
-
+import { CategoriesComponent } from './CategoriesComponent';
 
 class AlgoDashboard extends React.Component {
   render() {
@@ -13,14 +10,12 @@ class AlgoDashboard extends React.Component {
           <h1>LoginBanner at top</h1>
         </div>
 
-
         <div>
           <CategoriesComponent></CategoriesComponent>
         </div>
       </>
-    )
+    );
   }
 }
 
 export default AlgoDashboard;
-

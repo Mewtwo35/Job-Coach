@@ -47,6 +47,9 @@ const config = {
     static: {
       directory: './dist',
     },
+    proxy: {
+      '/': 'http://localhost:3000',
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
