@@ -11,6 +11,7 @@ app.use(morgan('dev'));
 
 //JSON parser
 app.use(express.json());
+app.use(express.urlencoded());
 
 //server static assets
 app.use(express.static('./client'));
@@ -27,7 +28,10 @@ app.use((req: Request, res: Response) => {
   //You can also do res.status(404).send() but line 22 is cleaner. Remember: LESS IS MORE
   return res.sendStatus(404);
 });
-
+app.use('/', (req: Request, res: Response, next: NextFunction) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  return next();
+});
 //Deepen your understanding:
 //500 Internal Server Error server error response code indicates that the server
 // encountered an unexpected condition that prevented it from fulfilling the request.

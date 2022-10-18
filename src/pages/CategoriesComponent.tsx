@@ -28,11 +28,34 @@ export const CategoriesComponent = () => {
 
 const Category = (props: CategoryProps) => {
   const { text, name } = props;
+  async function handleClick(e: React.MouseEvent<HTMLElement>, name: any) {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        '/algo/?' +
+          new URLSearchParams({
+            algoName: name,
+          }).toString()
+      ).then((res) => res.json());
+
+      console.log(response);
+      return response;
+    } catch (err) {
+      return 'error finding algo';
+    }
+  }
   return (
     <div className={'CategoryContainer'}>
       <h2> Category: {text}</h2>
-
       <h2> Name: {name}</h2>
+      <button
+        onClick={(e) => {
+          handleClick(e, name);
+        }}
+      >
+        Try
+      </button>
     </div>
   );
 };

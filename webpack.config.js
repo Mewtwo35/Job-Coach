@@ -49,6 +49,7 @@ const config = {
     },
     proxy: {
       '/': 'http://localhost:3000',
+      '/algo': 'http://localhost:3000',
     },
   },
   plugins: [
