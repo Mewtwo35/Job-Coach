@@ -12,6 +12,9 @@ router.get(
     return res.status(200).send(res.locals.algos);
   }
 );
+router.get('/algo', algoPGController.getAlgo, (req: Request, res: Response) => {
+  return res.status(200).send(res.locals.algos);
+});
 
 //get code editor page
 router.get('/editor', (req: Request, res: Response) => {
