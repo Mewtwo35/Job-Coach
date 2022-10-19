@@ -9,7 +9,9 @@ function TryButton() {
 
   //changes userState to {isLogged: false}
   function logout() {
-    return navToHome();
+    console.log('sdfassdfa')
+    navToHome();
+    return;
   }
 
   //<Button onClick={logout} sx={{ width: '200px', color: 'rgb(65, 91, 152)' }} variant="outlined">Logout</Button>

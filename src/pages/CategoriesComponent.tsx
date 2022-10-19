@@ -51,6 +51,7 @@ export const CategoriesComponent = () => {
     <div>
       <h2>List of Coding questions</h2>
       {catArr}
+      <div className='help'><TryButton/></div>
       <button onClick={handleNav}></button>
     </div>
   );
