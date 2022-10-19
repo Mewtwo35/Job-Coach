@@ -6,7 +6,7 @@ import CodeEditor from './pages/CodeEditor';
 class App extends React.Component {
   render() {
     return (
-      <>
+      <div id="app-container">
         <Routes>
           {/* <Route path="/" element={<AlgoDashboard />} /> */}
           <Route path="/" element={<CodeEditor />} />
@@ -19,7 +19,7 @@ class App extends React.Component {
             }
           />
         </Routes>
-      </>
+      </div>
     );
   }
 }

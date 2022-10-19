@@ -45,23 +45,23 @@ const CodeEditor = () => {
     consoleEl?.append("<p class='pconsole indent'>" + s + ' </p>');
   }
   return (
-    <div>
+    <div id="editor-container">
       <h2>CodeMirror</h2>
-      <div className="console">
+      <div className='console'>
         {/* <p className="pconsole">/**</p>
         <p className="pconsole indent">* Function out put will go here.</p>
         <p className="pconsole indent">* /</p> */}
       </div>
-      <script id="script" type="text/javascript"></script>
+      <script id='script' type='text/javascript'></script>
 
-      <div className="prompt"></div>
+      <div className='prompt'></div>
 
-      <div className="list-of-topics"></div>
+      <div className='list-of-topics'></div>
 
-      <div className="codemirror">
+      <div className='codemirror'>
         <CodeMirror
-          value="function sum(a, b) { return a + b; }"
-          height="200px"
+          value='function sum(a, b) { return a + b; }'
+          height='200px'
           //   extensions={[javascript({ jsx: true })]}
           onChange={onChange}
         />
@@ -69,9 +69,9 @@ const CodeEditor = () => {
 
       {/* <Button variant="contained">Submit</Button> */}
       <button onClick={handleClick}>Run</button>
-      <div id="testContainer">
+      <div id='testContainer'>
         <iframe
-          id="test-frame"
+          id='test-frame'
           style={{ height: '300px', width: '400px' }}
           srcDoc={frameHtml || '<h1></h1>'}
         />
