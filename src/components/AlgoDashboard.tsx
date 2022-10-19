@@ -10,9 +10,7 @@ export const AlgoDashboard = () => {
   return (
     <>
       <h1> ALGO DASHBOARD </h1>
-      <div>
-        <h1>LoginBanner at top</h1>
-      </div>
+      <div>{/* <h1>LoginBanner at top</h1> */}</div>
 
       <div>
         <CategoriesComponent></CategoriesComponent>

@@ -39,13 +39,14 @@ const CodeEditor = () => {
     check();
     console.log(name === 'twsosum', name, 'in use effect');
 
-    const promptHeader = document.querySelector('.prompt');
+    // const promptHeader = document.querySelector('.prompt');
+    const promptHeader = document.getElementById('sidebar');
     const prevHeader = document.getElementById('prompt');
     if (prevHeader) prevHeader.remove();
     const h3 = document.createElement('h3');
     h3.setAttribute('id', 'prompt');
     h3.textContent = testType.prompt;
-    promptHeader?.append(h3);
+    promptHeader?.appendChild(h3);
   });
   const onChange = React.useCallback((value: any, viewUpdate: any) => {
     setStoredVal(value);
@@ -85,29 +86,24 @@ const CodeEditor = () => {
     // console.log(currTest);
   }
   return (
-    <div id='editor-container'>
-      <script id='script' type='text/javascript'></script>
-      <div className='prompt'></div>
-      <div className='codemirror'>
+    <div id="editor-container">
+      <script id="script" type="text/javascript"></script>
+      <div className="prompt"></div>
+      <div className="codemirror">
         <CodeMirror
           value={testType.startFunc}
-          height='200px'
+          height="200px"
           onChange={onChange}
         />
       </div>
 
-      {/* <div className="console">
-      <p className="pconsole">/**</p>
-      <p className="pconsole indent">* Function out put will go here.</p>
-      <p className="pconsole indent">* /</p> */}
-
-      <button id='test-button' onClick={handleClick}>
+      <button id="test-button" onClick={handleClick}>
         Test Your Solution
       </button>
-      <div id='testContainer'>
+      <div id="testContainer">
         <iframe
-          id='test-frame'
-          style={{ height: '300px', width: '400px' }}
+          id="test-frame"
+          style={{ height: '700px', width: '700px' }}
           srcDoc={frameHtml || '<h1></h1>'}
         />
       </div>
