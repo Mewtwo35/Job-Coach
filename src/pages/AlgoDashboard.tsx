@@ -3,7 +3,6 @@ import { CategoriesComponent } from './CategoriesComponent';
 // import CategoriesComponent from './CategoriesComponent';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import TryButton from './TryButton';
 import CodeEditor from './CodeEditor';
 
 export const AlgoDashboard = () => {

@@ -3,7 +3,6 @@ import { AlgoDashboard } from './pages/AlgoDashboard';
 import { Routes, Route } from 'react-router-dom';
 import CodeEditor from './pages/CodeEditor';
 import { CategoriesComponent } from './pages/CategoriesComponent';
-import TryButton from './pages/TryButton';
 
 class App extends React.Component {
   render() {

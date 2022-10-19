@@ -4,7 +4,6 @@ import {
   useNavigate,
   Link,
 } from 'react-router-dom';
-import TryButton from './TryButton';
 
 type CategoryProps = {
   text: String;
