@@ -12,7 +12,6 @@ class App extends React.Component {
         <Routes>
           <Route path="/" element={<AlgoDashboard />} />
           <Route path="/questions" element={<CodeEditor />} />
-          <Route path="/aaaaa" element={<button></button>} />
           <Route
             path="*"
             element={

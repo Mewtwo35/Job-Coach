@@ -19,8 +19,7 @@ export const AlgoDashboard = () => {
 
       <div>
         <CategoriesComponent/>
-        <button onClick={() => navigate('/questions')}></button>
-        {/* <CategoriesComponent setNavigate={setNavigate}></CategoriesComponent> */}
+        {/* <button onClick={() => navigate('/questions')}></button> */}
       </div>
     </>
   );

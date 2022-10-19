@@ -5,9 +5,13 @@ import { javascript } from '@codemirror/lang-javascript';
 import Button from '@mui/material/Button';
 import { useEffect } from 'react';
 import testhtml from './testhtml';
+import { useLocation } from 'react-router-dom';
 
 const CodeEditor = () => {
   const [frameHtml, setFrameHtml] = React.useState(testhtml);
+  const location = useLocation();
+  const { name } = location.state;
+  console.log('Qname: ',name);
   let storedVal: any;
   const onChange = React.useCallback((value: any, viewUpdate: any) => {
     console.log('value:', value);
