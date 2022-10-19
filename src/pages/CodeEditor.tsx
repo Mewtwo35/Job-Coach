@@ -9,7 +9,7 @@ import { mockData } from '../clientTest/test/mockData';
 import { useLocation } from 'react-router-dom';
 
 const CodeEditor = () => {
-  const currTest = 'twoSum';
+  let testPrompt = '';
   const [frameHtml, setFrameHtml] = React.useState(testhtml);
   const location = useLocation();
   const { name } = location.state;
@@ -18,16 +18,35 @@ const CodeEditor = () => {
   const [testStatement, setTestStatement] = React.useState('');
   const [updateTest, setUpdateTest] = React.useState(false);
   const [storedVal, setStoredVal] = React.useState('');
-  const [testType, setTestType] = React.useState(mockData[`${currTest}`]);
+  const [testType, setTestType] = React.useState({
+    startFunc: '',
+    testStatement: '',
+    prompt: '',
+  });
 
   useEffect(() => {
-    setStartFunc(testType.startFunc);
-    setTestStatement(testType.testStatement);
+    const check = async () => {
+      if (name === 'twsosum') {
+        setTestType(mockData['twosum']);
+        setStartFunc(testType.startFunc);
+        setTestStatement(testType.testStatement);
+      } else if (name === 'fizzbuzz') {
+        setTestType(mockData['fizzbuzz']);
+        setStartFunc(testType.startFunc);
+        setTestStatement(testType.testStatement);
+      }
+    };
+    check();
+    console.log(name === 'twsosum', name, 'in use effect');
+
     const promptHeader = document.querySelector('.prompt');
+    const prevHeader = document.getElementById('prompt');
+    if (prevHeader) prevHeader.remove();
     const h3 = document.createElement('h3');
+    h3.setAttribute('id', 'prompt');
     h3.textContent = testType.prompt;
     promptHeader?.append(h3);
-  }, []);
+  });
   const onChange = React.useCallback((value: any, viewUpdate: any) => {
     setStoredVal(value);
   }, []);
@@ -63,7 +82,7 @@ const CodeEditor = () => {
     e.preventDefault();
     // currTest = e.target.value
     console.log(e.target.value);
-    console.log(currTest);
+    // console.log(currTest);
   }
   return (
     <div>
