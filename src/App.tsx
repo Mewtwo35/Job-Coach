@@ -1,14 +1,15 @@
 import * as React from 'react';
-import AlgoDashboard from './pages/AlgoDashboard';
+import { AlgoDashboard } from './pages/AlgoDashboard';
 import { Routes, Route } from 'react-router-dom';
 import CodeEditor from './pages/CodeEditor';
+import { CategoriesComponent } from './pages/CategoriesComponent';
 
 class App extends React.Component {
   render() {
     return (
       <>
         <Routes>
-          <Route path="/" element={<AlgoDashboard />} />
+          <Route path="/" element={<CategoriesComponent />} />
           <Route path="/questions" element={<CodeEditor />} />
           <Route
             path="*"
