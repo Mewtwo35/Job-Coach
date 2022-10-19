@@ -1,9 +1,5 @@
 import * as React from 'react';
 import CategoriesComponent from './CategoriesComponent';
-
-
-
-
 class AlgoDashboard extends React.Component {
   render() {
     return (
