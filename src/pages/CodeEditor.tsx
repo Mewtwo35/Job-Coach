@@ -55,9 +55,20 @@ const CodeEditor = () => {
     pConsole?.remove();
     consoleEl?.append("<p class='pconsole indent'>" + s + ' </p>');
   }
+  function handleSelect(e: any) {
+    e.preventDefault();
+    // currTest = e.target.value
+    console.log(e.target.value);
+    console.log(currTest);
+  }
   return (
     <div>
       <h2>CodeMirror</h2>
+      <label>Select a test:</label>
+      <select onChange={handleSelect}>
+        <option>twoSum</option>
+        <option>fizzbuzz</option>
+      </select>
       <div className="console">
         {/* <p className="pconsole">/**</p>
         <p className="pconsole indent">* Function out put will go here.</p>
