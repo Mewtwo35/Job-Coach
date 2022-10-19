@@ -72,7 +72,7 @@ const CodeEditor = () => {
     const pConsole = document.querySelector('.pconsole');
     const consoleEl = document.querySelector('.console');
     s.setAttribute('id', 'chalfunction');
-    s.textContent = storedVal; //inne
+    s.textContent = storedVal;
     console.log(s);
     consoleEl?.appendChild(s);
     pConsole?.remove();
@@ -85,38 +85,28 @@ const CodeEditor = () => {
     // console.log(currTest);
   }
   return (
-    <div>
-      <h2>CodeMirror</h2>
-      <label>Select a test:</label>
-      <select onChange={handleSelect}>
-        <option>twoSum</option>
-        <option>fizzbuzz</option>
-      </select>
-      <div className="console">
-        {/* <p className="pconsole">/**</p>
-        <p className="pconsole indent">* Function out put will go here.</p>
-        <p className="pconsole indent">* /</p> */}
-      </div>
-      <script id="script" type="text/javascript"></script>
-
-      <div className="prompt"></div>
-
-      <div className="list-of-topics"></div>
-
-      <div className="codemirror">
+    <div id='editor-container'>
+      <script id='script' type='text/javascript'></script>
+      <div className='prompt'></div>
+      <div className='codemirror'>
         <CodeMirror
           value={testType.startFunc}
-          height="200px"
-          //   extensions={[javascript({ jsx: true })]}
+          height='200px'
           onChange={onChange}
         />
       </div>
 
-      {/* <Button variant="contained">Submit</Button> */}
-      <button onClick={handleClick}>Run</button>
-      <div id="testContainer">
+      {/* <div className="console">
+      <p className="pconsole">/**</p>
+      <p className="pconsole indent">* Function out put will go here.</p>
+      <p className="pconsole indent">* /</p> */}
+
+      <button id='test-button' onClick={handleClick}>
+        Test Your Solution
+      </button>
+      <div id='testContainer'>
         <iframe
-          id="test-frame"
+          id='test-frame'
           style={{ height: '300px', width: '400px' }}
           srcDoc={frameHtml || '<h1></h1>'}
         />

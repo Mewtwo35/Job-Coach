@@ -1,18 +1,17 @@
 import * as React from 'react';
-import { AlgoDashboard } from './pages/AlgoDashboard';
+import AlgoDashboard from './components/AlgoDashboard';
 import { Routes, Route } from 'react-router-dom';
-import CodeEditor from './pages/CodeEditor';
-import { CategoriesComponent } from './pages/CategoriesComponent';
+import CodeDashboard from './components/CodeDashboard';
 
 class App extends React.Component {
   render() {
     return (
-      <>
+      <div id='app-container'>
         <Routes>
-          <Route path="/" element={<AlgoDashboard />} />
-          <Route path="/questions" element={<CodeEditor />} />
+          <Route path='/' element={<AlgoDashboard />} />
+          <Route path='/editor' element={<CodeDashboard />} />
           <Route
-            path="*"
+            path='*'
             element={
               <main>
                 <p>There's no page at this URL!</p>
@@ -20,7 +19,7 @@ class App extends React.Component {
             }
           />
         </Routes>
-      </>
+      </div>
     );
   }
 }

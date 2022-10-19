@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { CategoriesComponent } from './CategoriesComponent';
-// import CategoriesComponent from './CategoriesComponent';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import CodeEditor from './CodeEditor';
 
 export const AlgoDashboard = () => {
   const navigate = useNavigate();
   const [navigateBool, setNavigate] = useState<any>(false);
-  
+
   return (
     <>
       <h1> ALGO DASHBOARD </h1>
@@ -17,8 +15,7 @@ export const AlgoDashboard = () => {
       </div>
 
       <div>
-        <CategoriesComponent/>
-        {/* <button onClick={() => navigate('/questions')}></button> */}
+        <CategoriesComponent></CategoriesComponent>
       </div>
     </>
   );

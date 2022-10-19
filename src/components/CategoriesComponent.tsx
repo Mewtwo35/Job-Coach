@@ -16,7 +16,7 @@ export const CategoriesComponent = () => {
   let categoriesArray: any[] = []; //need to change type from any[]
   const categories: String[] = ['Arrays', 'LinkedList', 'String', 'Tree'];
   function handleNav() {
-    navigate('/questions');
+    navigate('/editor');
   }
   useEffect(() => {
     async function wrapper() {
@@ -66,7 +66,7 @@ const Category = (props: CategoryProps) => {
       <h2> Name: {name}  </h2>
 
       <div>
-          <Link to='/questions' state={{ name: name }}>
+          <Link to='/editor' state={{ name: name }}>
             <button>navigate</button>
           </Link>
       </div>
