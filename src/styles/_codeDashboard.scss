@@ -1,0 +1,27 @@
+#code-dashboard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    'sidebar editor'
+    'sidebar editor';
+
+  span {
+    text-align: center;
+  }
+
+  #sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(24, 91, 24);
+    padding: 1rem;
+  }
+}

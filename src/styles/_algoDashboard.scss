@@ -1,0 +1,29 @@
+#algo-dashboard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr;
+  outline: 1px red solid;
+  gap: 1rem;
+  grid-template-areas:
+    'header header header'
+    'question question question';
+
+  header {
+    grid-area: header;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    padding: 1rem;
+  }
+
+  #question-container {
+    grid-area: question;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+  }
+}

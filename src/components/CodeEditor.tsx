@@ -38,7 +38,7 @@ const CodeEditor = () => {
     const pConsole = document.querySelector('.pconsole');
     const consoleEl = document.querySelector('.console');
     s.setAttribute('id', 'chalfunction');
-    s.textContent = storedVal; //inne
+    s.textContent = storedVal;
     console.log(s);
     consoleEl?.appendChild(s);
     pConsole?.remove();
@@ -46,18 +46,6 @@ const CodeEditor = () => {
   }
   return (
     <div id="editor-container">
-      <h2>CodeMirror</h2>
-      <div className='console'>
-        {/* <p className="pconsole">/**</p>
-        <p className="pconsole indent">* Function out put will go here.</p>
-        <p className="pconsole indent">* /</p> */}
-      </div>
-      <script id='script' type='text/javascript'></script>
-
-      <div className='prompt'></div>
-
-      <div className='list-of-topics'></div>
-
       <div className='codemirror'>
         <CodeMirror
           value='function sum(a, b) { return a + b; }'
@@ -66,9 +54,7 @@ const CodeEditor = () => {
           onChange={onChange}
         />
       </div>
-
-      {/* <Button variant="contained">Submit</Button> */}
-      <button onClick={handleClick}>Run</button>
+      <button id="test-button" onClick={handleClick}>Test Your Solution</button>
       <div id='testContainer'>
         <iframe
           id='test-frame'
