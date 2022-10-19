@@ -1,5 +1,5 @@
 import * as React from 'react';
-import CategoriesComponent from './QuestionContainer';
+import CategoriesComponent from './CategoriesComponent';
 import { Link } from 'react-router-dom';
 
 class AlgoDashboard extends React.Component {
