@@ -6,10 +6,8 @@ export default `<html>
 </head>
 <body>
   <div id="mocha"></div>
-
   <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
   <script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
-
   <script>
     mocha.setup('bdd');
   </script>
@@ -19,7 +17,6 @@ export default `<html>
   <script id="test">
     __TESTHERE__
   </script>
-
   <script>
     // mocha.checkLeaks();
     mocha.run();
