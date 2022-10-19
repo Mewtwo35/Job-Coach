@@ -8,14 +8,29 @@ export const AlgoDashboard = () => {
   const [navigateBool, setNavigate] = useState<any>(false);
 
   return (
-    <>
-      <h1> ALGO DASHBOARD </h1>
-      <div>{/* <h1>LoginBanner at top</h1> */}</div>
+    <div className='AlgoDash'>
+      <div className='title'>
+      <div> A </div>
+      <div> L </div>
+      <div> G </div>
+      <div> O </div>
+      <div className='space'>  </div>
+      <div> D </div>
+      <div> A </div>
+      <div> S </div>
+      <div> H </div>
+      <div> B </div>
+      <div> O </div>
+      <div> A </div>
+      <div> R </div>
+      <div> D </div>
+      </div>
+
 
       <div>
         <CategoriesComponent></CategoriesComponent>
       </div>
-    </>
+    </div>
   );
 };
 

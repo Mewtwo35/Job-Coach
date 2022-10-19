@@ -47,16 +47,60 @@ h1 {
   background-color: black;
 }
 
-.CategoryContainer {
+.AlgoDash {
+  height: 100%;
   display: flex;
-  flex-direction: row;
-  position: relative;
+}
+
+.title {
+  background-color: black;
+  width: 100px;
+  padding: 80px;
+  margin-right: 50px;
+
+
+  div {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
+.space {
+  height: 100px;
+}
+
+.list {
+  margin: 20px;
+}
+
+.CategoryContainer {
+  background-color: #d39ca5;
+  width: 500px;
+  border-radius: 20px;
+  margin-bottom: 10px;
   padding: 1rem;
-  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div {
+    width: fit-content;
+  }
 }
 
 #editor-container {
   height: 100%;
   width: 100%;
   gap: 0.5em;
+}
+
+.button {
+  background-color: black;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+.link {
+  color: white;
 }

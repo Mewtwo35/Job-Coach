@@ -29,7 +29,7 @@ export const CategoriesComponent = () => {
 
   return (
     <div>
-      <h2>List of Coding questions</h2>
+      <h2 className='list'>List of Coding questions</h2>
       {catArr}
       {/* <div className='help'><TryButton/></div> */}
     </div>
@@ -62,12 +62,12 @@ const Category = (props: CategoryProps) => {
   }
   return (
     <div className={'CategoryContainer'}>
-      <h2> Category: {text}</h2>
-      <h2> Name: {name}  </h2>
+      <div> Category: {text}</div>
+      <div> Name: {name}  </div>
 
-      <div>
-          <Link to='/editor' state={{ name: name }}>
-            <button>navigate</button>
+      <div className='button'>
+          <Link className='link' to='/editor' state={{ name: name }}>
+            navigate
           </Link>
       </div>
       {/* <button
