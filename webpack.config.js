@@ -51,6 +51,10 @@ const config = {
     static: {
       directory: './dist',
     },
+    proxy: {
+      '/': 'http://localhost:3000',
+      '/algo': 'http://localhost:3000',
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -65,6 +69,7 @@ const config = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
+  
 };
 
 module.exports = config;

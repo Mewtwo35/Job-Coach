@@ -1,16 +1,18 @@
 import * as React from 'react';
-import CategoriesComponent from './CategoriesComponent';
-import { Link } from 'react-router-dom';
+import { CategoriesComponent } from './CategoriesComponent';
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
-class AlgoDashboard extends React.Component {
-  render() {
-    return (
-      <>
-        <h1> ALGO DASHBOARD </h1>
-        <Link to='/editor'>CODE DASHBOARD</Link>
-        <div>
-          <h1>LoginBanner at top</h1>
-        </div>
+export const AlgoDashboard = () => {
+  const navigate = useNavigate();
+  const [navigateBool, setNavigate] = useState<any>(false);
+  
+  return (
+    <>
+      <h1> ALGO DASHBOARD </h1>
+      <div>
+        <h1>LoginBanner at top</h1>
+      </div>
 
         <div>
           <CategoriesComponent></CategoriesComponent>
