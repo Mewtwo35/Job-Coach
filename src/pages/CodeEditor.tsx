@@ -6,10 +6,14 @@ import Button from '@mui/material/Button';
 import { useEffect } from 'react';
 import testhtml from './testhtml';
 import { mockData } from '../clientTest/test/mockData';
+import { useLocation } from 'react-router-dom';
 
 const CodeEditor = () => {
   const currTest = 'twoSum';
   const [frameHtml, setFrameHtml] = React.useState(testhtml);
+  const location = useLocation();
+  const { name } = location.state;
+  console.log('Qname: ', name);
   const [startFunc, setStartFunc] = React.useState('');
   const [testStatement, setTestStatement] = React.useState('');
   const [updateTest, setUpdateTest] = React.useState(false);
