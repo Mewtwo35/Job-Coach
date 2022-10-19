@@ -5,14 +5,27 @@ import { javascript } from '@codemirror/lang-javascript';
 import Button from '@mui/material/Button';
 import { useEffect } from 'react';
 import testhtml from './testhtml';
+import { mockData } from '../clientTest/test/mockData';
 
 const CodeEditor = () => {
+  const currTest = 'twoSum';
   const [frameHtml, setFrameHtml] = React.useState(testhtml);
-  let storedVal: any;
+  const [startFunc, setStartFunc] = React.useState('');
+  const [testStatement, setTestStatement] = React.useState('');
+  const [updateTest, setUpdateTest] = React.useState(false);
+  const [storedVal, setStoredVal] = React.useState('');
+  const [testType, setTestType] = React.useState(mockData[`${currTest}`]);
+
+  useEffect(() => {
+    setStartFunc(testType.startFunc);
+    setTestStatement(testType.testStatement);
+    const promptHeader = document.querySelector('.prompt');
+    const h3 = document.createElement('h3');
+    h3.textContent = testType.prompt;
+    promptHeader?.append(h3);
+  }, []);
   const onChange = React.useCallback((value: any, viewUpdate: any) => {
-    console.log('value:', value);
-    storedVal = value;
-    console.log(storedVal, 'stored val');
+    setStoredVal(value);
   }, []);
   document.write = function (s) {
     var scripts = document.getElementsByTagName('script');
@@ -20,19 +33,17 @@ const CodeEditor = () => {
     lastScript.insertAdjacentHTML('beforebegin', s);
   };
   const runTest = () => {
-    const testCode = `describe('sum', function () {
-      it('should return sum of arguments', function () {
-        chai.expect(sum(1, 2)).to.equal(3);
-      });
-    });`;
-    const code = 'function sum(a, b) { return a + b; }';
-    const test = testhtml.replace('__TESTHERE__', testCode);
-    setFrameHtml(test.replace('__SOLUTIONHERE__', storedVal));
+    if (updateTest) {
+      console.log('updating test', storedVal);
+      const test = testhtml.replace('__TESTHERE__', testStatement);
+      setFrameHtml(test.replace('__SOLUTIONHERE__', storedVal));
+    }
   };
 
   function handleClick(e: any) {
     e.preventDefault();
     console.log(document);
+    setUpdateTest(true);
     runTest();
     const s = document.createElement('script');
     const pConsole = document.querySelector('.pconsole');
@@ -60,7 +71,7 @@ const CodeEditor = () => {
 
       <div className="codemirror">
         <CodeMirror
-          value="function sum(a, b) { return a + b; }"
+          value={testType.startFunc}
           height="200px"
           //   extensions={[javascript({ jsx: true })]}
           onChange={onChange}
