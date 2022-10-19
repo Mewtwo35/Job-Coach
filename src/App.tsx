@@ -1,22 +1,23 @@
 import * as React from 'react';
 import AlgoDashboard from './pages/AlgoDashboard';
 import { Routes, Route } from 'react-router-dom';
-import CodeEditor from './pages/CodeEditor'
-
+import CodeEditor from './pages/CodeEditor';
 
 class App extends React.Component {
   render() {
     return (
       <>
         <Routes>
-            <Route path="/" element={<AlgoDashboard />} />
-                <Route path="/questions" element={<CodeEditor />} />
-                <Route path="*" element={
-                  <main>
-                    <p>There's no page at this URL!</p>
-                  </main>
-                }
-                />
+          {/* <Route path="/" element={<AlgoDashboard />} /> */}
+          <Route path="/" element={<CodeEditor />} />
+          <Route
+            path="*"
+            element={
+              <main>
+                <p>There's no page at this URL!</p>
+              </main>
+            }
+          />
         </Routes>
       </>
     );
